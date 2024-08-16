@@ -76,7 +76,10 @@ jobs:
             echo "This is the part where it would deploy to a Service like Azure or AWS"
             echo "Application deployed to staging"
 
-
+  notify:
+    runs-on: ubuntu-latest
+    needs: deploy
+    steps:
     #Notify the discord Channel when a Build Fails            
     - name: Notify on Build Failure
       if: failure()
