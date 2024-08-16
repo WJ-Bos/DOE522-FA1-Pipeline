@@ -1,6 +1,6 @@
 // backend/src/__tests__/api.test.js
 const request = require("supertest");
-const app = require("../../App"); // Ensure path is correct
+const {app,server} = require("../../App"); // Ensure path is correct
 
 describe("GET /message", () => {
   it("should return the correct response", (done) => {
@@ -13,4 +13,11 @@ describe("GET /message", () => {
         done();
       });
   });
+
+  afterAll((done) => {
+    // Optional: Close any open connections or server instances
+    // Example: If you have a server instance running, you could close it here
+    server.close(done);
+  });
+
 });
