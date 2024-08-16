@@ -34,7 +34,7 @@ jobs:
         working-directory: ./frontend
 
       - name: Copy Built FE to BE
-        run: cp -r ./frontend/dist/* ./backend/public
+        run: cp -r ./frontend/dist/* ./backend
 
   test:
     runs-on: ubuntu-latest
